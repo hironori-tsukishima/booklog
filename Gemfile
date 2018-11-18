@@ -50,6 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'haml-rails'
   gem 'erb2haml'
+  gem "font-awesome-rails"
 
 end
 
