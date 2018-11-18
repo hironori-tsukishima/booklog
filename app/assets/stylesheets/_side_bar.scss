@@ -1,0 +1,49 @@
+.side{
+  height:100vh;
+  width: 300px;
+  background-color:#455A64;
+  float:left;
+  .sideUser{
+    height:100px;
+    padding:0px 20px;
+    border-bottom:solid 1px #eeeeee ;
+    .sideUserName{
+      color:white;
+      font-size: 16px;
+      font-weight: bold;
+      vertical-align:middle;
+      line-height: 100px;
+    }
+  }
+  .sideContents{
+    padding:0px 20px;
+    border-bottom: 1px solid #eeeeee;
+    .sideContentTitle{
+      color:white;
+      font-size:15px;
+      padding:20px 0px 5px 0px;
+    }
+    .sideContentDate{
+      color:white;
+      font-size:10px;
+      padding:0px 0px 5px 0px;
+    }
+    .sideContentEdit{
+      color :white;
+      position: absolute;
+      right:83%;
+      padding: 20px 5px 0 0;
+    }
+    .sideContentDelete{
+      color :white;
+      position: absolute;
+      right:80%;
+      padding: 20px 20px 0 0;
+    }
+    .sideContentSummary{
+      color:white;
+      font-size:12px;
+      padding:0px 0px 20px 0px;
+    }
+  }
+}
