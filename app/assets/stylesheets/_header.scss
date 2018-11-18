@@ -1,0 +1,23 @@
+.wrapper{
+  height:50px;
+  background-color: #37474F;
+  .title{
+    color:#EF6C00;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 20px;
+    vertical-align:middle;
+    line-height: 50px;
+  }
+  .icon_search{
+    @include header()
+  }
+  .icon_plus{
+    @include header()
+
+  }
+  .icon_user{
+    @include header()
+
+  }
+}
