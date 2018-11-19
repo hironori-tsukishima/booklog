@@ -5,7 +5,7 @@ class CreateContents < ActiveRecord::Migration[5.0]
       t.text      :summary
       t.text      :text
       t.text      :image
-      t.timestamps
+      t.timestamps null:true
     end
   end
 end
