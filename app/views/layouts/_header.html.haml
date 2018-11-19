@@ -1,8 +1,12 @@
 .wrapper
   .mypage
-    = fa_icon 'search 2x', class: 'icon_search'
+    = link_to new_content_path do
+      = fa_icon 'search 2x', class: 'icon_search'
   .post
-    = fa_icon 'plus-circle 2x', class: 'icon_plus'
+    = link_to new_content_path do
+      = fa_icon 'plus-circle 2x', class: 'icon_plus'
   .login
-    = fa_icon 'user 2x', class: 'icon_user'
-  .title Booklog
+    = link_to new_content_path do
+      = fa_icon 'user 2x', class: 'icon_user'
+  .title
+    =link_to "booklog",contents_path, id: "title"
