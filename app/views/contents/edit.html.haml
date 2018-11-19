@@ -1,0 +1,15 @@
+.wrapper
+  = render partial: "layouts/header"
+  = render partial: 'layouts/side_bar'
+  .mainNew
+    .mainNewHader
+      .mainNewCog
+        = fa_icon 'trash-o 2x', class: 'icon_trash'
+      .mainNewClip
+        = fa_icon 'paperclip 2x', class: 'icon_edit'
+      .mainNewEdit
+        = fa_icon 'pencil 2x', class: 'icon_Clip'
+      %input.mainNewTitle{type:"text" ,placeholder:"入力してた値を表示",autofocus:true}
+    .mainNewBody
+      %input.mainNewSummary{type:"textarea",placeholder:"入力してた値を表示"}
+      %input.mainNewText{type:"textarea",placeholder:"入力してた値を表示"}
