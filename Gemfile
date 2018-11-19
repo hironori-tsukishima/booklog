@@ -51,6 +51,8 @@ group :development do
   gem 'haml-rails'
   gem 'erb2haml'
   gem "font-awesome-rails"
+  gem 'carrierwave'
+  gem 'mini_magick'
 
 end
 
