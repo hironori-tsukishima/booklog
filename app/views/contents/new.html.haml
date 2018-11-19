@@ -2,16 +2,21 @@
   = render partial: "layouts/header"
   = render partial: 'layouts/side_bar'
   .mainNew
-    .mainNewHader
-      .mainNewTrash
-        = fa_icon 'trash-o 2x', class: 'icon'
-      .mainNewClip
-        = fa_icon 'paperclip 2x', class: 'icon'
-      .mainNewEdit
-        = fa_icon 'pencil 2x', class: 'icon'
-      .mainNewSave
-        = fa_icon 'save 2x', class: 'icon'
-      %input.mainNewTitle{type:"text" ,placeholder:"タイトルを入力してください",autofocus:true}
-    .mainNewBody
-      %textarea.mainNewSummary{placeholder:"要約を入力してください"}
-      %textarea.mainNewText{placeholder:"本文を入力してください"}
+    = form_for @content do|f|
+      .mainNewHeader
+        .mainNewTrash
+          =link_to contents_path do
+            = fa_icon 'trash-o 2x', class: 'icon'
+        .mainNewClip
+          =link_to contents_path do
+            = fa_icon 'paperclip 2x', class: 'icon'
+        .mainNewEdit
+          =link_to link_to contents_path do
+            = fa_icon 'pencil 2x', class: 'icon'
+        .mainNewSave
+          = f.submit "save", class: "submit" do
+            = fa_icon 'save 2x', class: 'icon'
+        = f.text_field :title, placeholder:"タイトルを入力してください",autofocus:true, class: "mainNewTitle"
+      .mainNewBody
+        = f.text_field :summary ,placeholder:"要約を入力してください" ,class: "mainNewSummary"
+        = f.text_field :text ,placeholder:"本文を入力してください" ,class: "mainNewText"
