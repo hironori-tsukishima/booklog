@@ -8,8 +8,9 @@
           =link_to contents_path do
             = fa_icon 'trash-o 2x', class: 'icon'
         .mainNewClip
-          =link_to contents_path do
-            = fa_icon 'paperclip 2x', class: 'icon'
+          = f.label :image do
+            = fa_icon "paperclip 3x" , class: "icon"
+            = f.file_field :image, class: "hidden"
         .mainNewEdit
           =link_to link_to contents_path do
             = fa_icon 'pencil 2x', class: 'icon'
