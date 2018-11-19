@@ -5,21 +5,27 @@ class ContentsController < ApplicationController
   end
 
   def new
+    @content = Content.new
   end
 
   def create
-    @content = Content.new
+    @content = Content.new(content_params)
       if @content.save
         redirect_to contents_path
       else
-        render new_content_path
+        render :new
       end
   end
 
-  def content_params
-    params.require(:content).permit(:image, :text, :title, :summary,)
+  def edit
+    @content = Content.find(params[:id])
   end
 
+private
+
+  def content_params
+    params.require(:content).permit(:text, :title, :summary)
+  end
 end
 
 
