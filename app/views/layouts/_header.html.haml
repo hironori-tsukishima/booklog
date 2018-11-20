@@ -6,7 +6,11 @@
     = link_to new_content_path do
       = fa_icon 'plus-circle 2x', class: 'icon_plus'
   .login
-    = link_to new_content_path do
-      = fa_icon 'user 2x', class: 'icon_user'
+    - if user_signed_in?
+      = link_to destroy_user_session_path ,method: :delete do
+        = fa_icon 'user 2x', class: 'icon_user'
+    - else
+      = link_to new_user_session_path do
+        = fa_icon 'user 2x', class: 'icon_user'
   .title
-    =link_to "booklog",contents_path, id: "title"
+    = link_to "BookLog", contents_path, id: "title"
