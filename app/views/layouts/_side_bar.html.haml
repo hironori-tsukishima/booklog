@@ -2,7 +2,8 @@
   .sideUser
     .sideUserName
       - if user_signed_in?
-        = current_user.name
+        = link_to edit_user_path(current_user.id) do
+          = current_user.name
       - else
         ログインしてください
   .sideContents
