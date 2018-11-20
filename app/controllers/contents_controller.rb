@@ -25,8 +25,27 @@ class ContentsController < ApplicationController
     @content = Content.find(params[:id])
   end
 
-private
+  def update
+    content = Content.find(params[:id])
+      if content.user_id == current_user.id
+          content.update(content_params)
+            redirect_to content_path
+      else
+        render :index
+      end
+  end
 
+  def destroy
+    content = Content.find(params[:id])
+      if content.user_id == current_user.id
+        content.destroy
+          redirect_to contents_path
+      else
+        render :show
+      end
+  end
+
+private
   def content_params
     params.require(:content).permit(:text, :title, :summary).merge(user_id: current_user.id)
   end
