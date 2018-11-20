@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :contents do
     resources :comments ,only: [:new , :create]
   end
+  resources :users ,only: [:edit,:update]
 end
