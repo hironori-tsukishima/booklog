@@ -61,5 +61,26 @@
       color:#E64A19;
       padding-top: 50px;
     }
+    .mainShowFooterComments{
+      font-size: 15px;
+      padding-top: 20px;
+    }
+    .mainShowFooterComment{
+      .mainShowFooterCommentUser{
+        font-size: 16px;
+        float: left;
+      }
+        .mainShowFooterCommentTime{
+          font-size: 10px;
+          float:right;
+          padding-left: 20px;
+          padding-top: 6px;
+          position: bottom;
+        }
+      .mainShowFooterCommentText{
+        font-size: 15px;
+        clear:both;
+      }
+    }
   }
 }
