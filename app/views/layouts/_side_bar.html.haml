@@ -1,17 +1,23 @@
 .side
   .sideUser
     .sideUserName
-      = current_user.name
+      - if user_signed_in?
+        = current_user.name
+      - else
+        ログインしてください
   .sideContents
-    - current_user.contents.each do |content|
-      .content
-        .sideContentEdit
-          = fa_icon 'pencil-square lg', class: 'icon_edit'
-        .sideContentDelete
-          = fa_icon 'trash-o lg', class: 'icon_cog'
-        .sideContentTitle
-          = content.title
-        .sideContentDate
-          = content.updated_at
-        .sideContentSummary
-          = content.summary
+    - if user_signed_in?
+      - current_user.contents.each do |content|
+        .content
+          .sideContentEdit
+            = fa_icon 'pencil-square lg', class: 'icon_edit'
+          .sideContentDelete
+            = fa_icon 'trash-o lg', class: 'icon_cog'
+          .sideContentTitle
+            = content.title
+          .sideContentDate
+            = content.updated_at
+          .sideContentSummary
+            = content.summary
+    - else
+      投稿した書評はありません

@@ -7,8 +7,11 @@
         =link_to contents_path do
           = fa_icon 'trash-o 2x', class: 'icon'
       .mainShowEdit
-        =link_to link_to contents_path do
-          = fa_icon 'pencil 2x', class: 'icon'
+        - if @content.user_id == current_user.id
+          =link_to edit_content_path do
+            = fa_icon 'pencil 2x', class: 'icon'
+        - else
+          = render :show
       .mainShowTitle
         =@content.title
       .mainShowTime
