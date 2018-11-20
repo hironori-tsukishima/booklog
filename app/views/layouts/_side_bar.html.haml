@@ -10,11 +10,14 @@
       - current_user.contents.each do |content|
         .content
           .sideContentEdit
-            = fa_icon 'pencil-square lg', class: 'icon_edit'
+            = link_to edit_content_path(content.id) do
+              = fa_icon 'pencil-square lg', class: 'icon_edit'
           .sideContentDelete
-            = fa_icon 'trash-o lg', class: 'icon_cog'
+            = link_to content_path(content.id), method: :delete do
+              = fa_icon 'trash-o lg', class: 'icon_cog'
           .sideContentTitle
-            = content.title
+            = link_to edit_content_path(content.id) do
+              = content.title
           .sideContentDate
             = content.updated_at
           .sideContentSummary
