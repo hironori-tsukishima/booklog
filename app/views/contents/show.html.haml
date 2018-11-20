@@ -26,4 +26,5 @@
       .mainShowTextMain
         =@content.text
       .mainShowFooter ~Comment~
-      .mainShowFooterComment
+      / = form_for [@content, @comment] do|f|
+      /   = f.text_field :text, placeholder:"コメントを入力して下さい"
