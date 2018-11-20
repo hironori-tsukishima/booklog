@@ -8,7 +8,7 @@
           = fa_icon 'trash-o 2x', class: 'icon'
       .mainShowEdit
         - if @content.user_id == current_user.id
-          = link_to edit_content_path do
+          = link_to edit_content_path(@content) do
             = fa_icon 'pencil 2x', class: 'icon'
         - else
           = render :show
@@ -28,5 +28,13 @@
       .mainShowFooter ~Comment~
       = form_for [@content, @comment] do|f|
         = f.text_field :text, placeholder:"コメントを入力して下さい"
-      .mainShowFooterComment
-        = @content.comments.text
+        = f.submit "save" ,id: "submit"
+      .mainShowFooterComments
+        - @content.comments.each do |comment|
+          .mainShowFooterComment
+            .mainShowFooterCommentUser
+              = "投稿者：#{comment.user.name}"
+              .mainShowFooterCommentTime
+                = comment.created_at
+            .mainShowFooterCommentText
+              = comment.text
