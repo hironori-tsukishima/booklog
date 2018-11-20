@@ -4,6 +4,11 @@
       .cardImage
         = content.image
       .cardTitle
-        = content.title
+        = link_to content_path(content.id) do
+          = content.title
+      .cardTime
+        = content.created_at
+      .cardUser
+        = "created_by  #{content.user.name}"
       .cardSummary
         = content.summary

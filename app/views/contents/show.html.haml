@@ -1,0 +1,15 @@
+.wrapper
+  = render partial: "layouts/header"
+  = render partial: 'layouts/side_bar'
+  .mainShow
+    .mainNewHeader
+      .mainShowTrash
+        =link_to contents_path do
+          = fa_icon 'trash-o 2x', class: 'icon'
+      .mainShowEdit
+        =link_to link_to contents_path do
+          = fa_icon 'pencil 2x', class: 'icon'
+      %input.mainShowTitle{type:"text", value:@content.title}
+    .mainNewBody
+      %textarea.mainShowSummary{value:@content.summary}
+      %textarea.mainShowtext{value:@content.text}
