@@ -17,6 +17,10 @@ class ContentsController < ApplicationController
       end
   end
 
+  def show
+    @content = Content.find(params[:id])
+  end
+
   def edit
     @content = Content.find(params[:id])
   end
@@ -24,7 +28,7 @@ class ContentsController < ApplicationController
 private
 
   def content_params
-    params.require(:content).permit(:text, :title, :summary)
+    params.require(:content).permit(:text, :title, :summary).merge(user_id: current_user.id)
   end
 end
 
