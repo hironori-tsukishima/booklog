@@ -14,20 +14,29 @@
       font-weight: bold;
       vertical-align:middle;
       line-height: 100px;
+      a{
+        color:inherit;
+      }
     }
   }
   .sideContents{
     display: flex;
     flex-direction: column;
-    color:white;
+    color:#FFAB91;
     padding:20px 20px;
+    a{
+        color:#efebe9;
+      }
     // padding:20px 0px 0px 20px;
     .content{
     border-bottom: 1px solid #eeeeee;
       .sideContentTitle{
-        color:white;
+        color:#FFAB91;
         font-size:15px;
         padding:20px 0px 5px 0px;
+        a{
+        color:inherit;
+        }
       }
       .sideContentDate{
         color:white;
@@ -37,12 +46,12 @@
       .sideContentEdit{
         color :white;
         float:right;
-        padding: 20px 5px 0 0;
+        padding: 20px 0px 0 0;
       }
       .sideContentDelete{
         color :white;
         float:right;
-        padding: 20px 20px 0 0;
+        padding: 20px 10px 0 0;
       }
       .sideContentSummary{
         color:white;

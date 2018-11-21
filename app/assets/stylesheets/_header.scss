@@ -1,6 +1,7 @@
 .wrapper{
   height:50px;
   background-color: #37474F;
+  // @extend .wrapper, .lighten-4;
   #title{
     color:#EF6C00;
     font-size: 30px;
@@ -22,3 +23,7 @@
 
   }
 }
+
+// body > div.wrapper > div.main > div:nth-child(1) > div.cardTitle > a {
+//   color: red;
+// }
