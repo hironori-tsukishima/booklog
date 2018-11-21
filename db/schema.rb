@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181120024906) do
+ActiveRecord::Schema.define(version: 20181120112010) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -23,13 +23,17 @@ ActiveRecord::Schema.define(version: 20181120024906) do
   end
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "title",      limit: 65535, null: false
-    t.text     "summary",    limit: 65535
-    t.text     "text",       limit: 65535
-    t.text     "image",      limit: 65535
+    t.text     "title",              limit: 65535, null: false
+    t.text     "summary",            limit: 65535
+    t.text     "text",               limit: 65535
+    t.text     "image",              limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.bigint   "photo_file_size"
+    t.datetime "photo_updated_at"
     t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
