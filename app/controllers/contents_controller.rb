@@ -1,7 +1,9 @@
 class ContentsController < ApplicationController
 
+  before_action :authenticate_user!, except: :index
+
   def index
-    @contents = Content.order("created_at ASC")
+    @contents = Content.order("created_at DESC").page(params[:page]).per(6)
   end
 
   def new
@@ -13,7 +15,8 @@ class ContentsController < ApplicationController
       if @content.save
         redirect_to contents_path, notice:"保存しました！"
       else
-        render :new,flash.now[:alert] = "保存できていません。タイトルは入れてくださいね"
+        flash.now[:alert] = "保存できていません。タイトルと画像は入れてくださいね"
+        render :new
       end
   end
 
@@ -49,7 +52,7 @@ class ContentsController < ApplicationController
 
 private
   def content_params
-    params.require(:content).permit(:id, :text, :title, :summary).merge(user_id: current_user.id)
+    params.require(:content).permit(:id, :photo,:text, :title, :summary).merge(user_id: current_user.id)
   end
 end
 

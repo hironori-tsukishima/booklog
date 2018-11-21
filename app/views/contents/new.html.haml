@@ -8,16 +8,16 @@
           =link_to contents_path do
             = fa_icon 'trash-o 2x', class: 'icon'
         .mainNewClip
-          = f.label :image do
+          = f.label :photo do
             = fa_icon "paperclip 3x" , class: "icon"
-            = f.file_field :image, class: "hidden"
+            = f.file_field :photo, class: "hidden"
         .mainNewEdit
           =link_to link_to contents_path do
             = fa_icon 'pencil 2x', class: 'icon'
         .mainNewSave
           = f.submit "save", class: "submit" do
             = fa_icon 'save 2x', class: 'icon'
-        = f.text_field :title, placeholder:"タイトルを入力してください",autofocus:true, class: "mainNewTitle"
+        = f.text_field :title, placeholder:"タイトル(注：右上のクリップより必ず画像を選択してください)",autofocus:true, class: "mainNewTitle"
       .mainNewBody
         = f.text_field :summary ,placeholder:"要約を入力してください" ,class: "mainNewSummary"
         = f.text_field :text ,placeholder:"本文を入力してください" ,class: "mainNewText"

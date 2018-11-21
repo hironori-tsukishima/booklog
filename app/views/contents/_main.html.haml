@@ -2,7 +2,9 @@
   - @contents.each do |content|
     .card
       .cardImage
-        = content.image
+        / = content.photo_file_name
+        = image_tag content.photo_file_name
+
       .cardTitle
         = link_to content_path(content.id) do
           = content.title
@@ -12,3 +14,4 @@
         = "created_by  #{content.user.name}"
       .cardSummary
         = content.summary
+  = paginate @contents
