@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
 
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @contents = Content.order("created_at DESC").page(params[:page]).per(6)
@@ -35,7 +35,8 @@ class ContentsController < ApplicationController
           content.update(content_params)
             redirect_to content_path, notice:"変更を保存しました"
       else
-        render :index,flash.now[:alert] = "変更は保存できていません、、。"
+        flash.now[:alert] = "変更は保存できていません、、。"
+        render :index
       end
   end
 
@@ -45,7 +46,8 @@ class ContentsController < ApplicationController
         content.destroy
           redirect_to contents_path,notice:"削除しました"
       else
-        render :show,flash.now[:alert] = "削除できませんでした"
+        flash.now[:alert] = "削除できませんでした"
+        render :show
       end
   end
 
