@@ -17,7 +17,7 @@
             = link_to content_path(content.id), method: :delete do
               = fa_icon 'trash-o lg', class: 'icon_cog'
           .sideContentTitle
-            = link_to edit_content_path(content.id) do
+            = link_to content_path(content.id) do
               = content.title
           .sideContentDate
             = content.updated_at
