@@ -4,14 +4,13 @@
   .mainShow
     .mainShowHeader
       .mainShowTrash
-        = link_to content_path(@content.id), method: :delete do
-          = fa_icon 'trash-o 2x', class: 'icon'
+        - if @content.user_id == current_user.id
+          = link_to content_path(@content.id), method: :delete do
+            = fa_icon 'trash-o 2x', class: 'icon'
       .mainShowEdit
         - if @content.user_id == current_user.id
           = link_to edit_content_path(@content) do
             = fa_icon 'pencil 2x', class: 'icon'
-        - else
-          = render :show
       .mainShowTitle
         =@content.title
       .mainShowTime
